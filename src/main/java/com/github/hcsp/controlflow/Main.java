@@ -1,8 +1,13 @@
 package com.github.hcsp.controlflow;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println(howManyPrimeNumbers(100));
+        System.out.println(howManyPrimeNumbers(5));
     }
 
     /**
@@ -15,5 +20,23 @@ public class Main {
      * @param n 给定的数字
      * @return 1到n之间(不包括n)质数的个数
      */
-    public static int howManyPrimeNumbers(int n) {}
+    public static int howManyPrimeNumbers(int n) {
+        List<Integer> arr = new ArrayList<>();
+        Set<Integer> unit = new HashSet<>();
+        for (int i = 2; i <= n; i++) {
+            boolean flag = true;
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+                arr.add(i);
+            }
+        }
+        unit.addAll(arr);
+        System.out.println(unit);
+        return unit.size();
+    }
 }
