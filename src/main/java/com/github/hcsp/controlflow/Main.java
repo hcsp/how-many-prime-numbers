@@ -1,5 +1,7 @@
 package com.github.hcsp.controlflow;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println(howManyPrimeNumbers(100));
@@ -15,5 +17,24 @@ public class Main {
      * @param n 给定的数字
      * @return 1到n之间(不包括n)质数的个数
      */
-    public static int howManyPrimeNumbers(int n) {}
+    public static int howManyPrimeNumbers(int n) {
+        boolean b;
+        ArrayList<Integer> array = new ArrayList<>();
+        for (int i = 1; i < n; i++) {
+            b = true;
+            int k = (int) Math.sqrt(i)+1;
+            for (int j = 2; j <= k; j++) {
+
+                if (i % j == 0) {
+                    b = false;
+                    break;
+                }
+            }
+            if (b) {
+                array.add(i);
+            }
+
+        }
+        return array.size();
+    }
 }
