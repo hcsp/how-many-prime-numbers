@@ -22,7 +22,7 @@ public class Main {
         boolean flag=true;
         int count = 0;//定义一个计数器
         for (int i = 2; i <n ; i++) {//外层循环+最小的质数为2
-            int sqrt=(int)Math.sqrt(i);//艰涩循环次数，提高效率
+            int sqrt=(int)Math.sqrt(i);//减少循环次数，提高效率
             for (int j = 2; j <(sqrt+1) ; j++) {
                 if(i%j==0){
                     flag=false;//如果这个数不是质数，标记为false
