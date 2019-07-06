@@ -1,5 +1,7 @@
 package com.github.hcsp.controlflow;
 
+import static java.lang.StrictMath.sqrt;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println(howManyPrimeNumbers(100));
@@ -15,5 +17,23 @@ public class Main {
      * @param n 给定的数字
      * @return 1到n之间(不包括n)质数的个数
      */
-    public static int howManyPrimeNumbers(int n) {}
+    public static int howManyPrimeNumbers(int n) {
+        int count = 0;
+        int temp;
+        for (int i = 2; i < n; i++) {
+            temp = 0;
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    temp++;
+                }
+            }
+            if (temp == 0) {
+                System.out.println(i);
+                count++;
+            }
+        }
+        System.out.print("count:");
+        return count;
+
+    }
 }
