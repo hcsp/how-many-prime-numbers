@@ -18,7 +18,7 @@ public class Main {
     public static int howManyPrimeNumbers(int n) {
         int number = 0;
         for(int i = 1; i < n; i ++) {
-            if(isPrime(n)) {
+            if(isPrime(i)) {
                 number += 1;
             }
         }
