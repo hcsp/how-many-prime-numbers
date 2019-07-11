@@ -22,12 +22,13 @@ public class Main {
             for (int j = 2; j <= Math.sqrt(n) + 1; j++) {
                 if (i == 2) {
                     isPrimeNumber = true;
+                } else if (i == 1) {
+                    isPrimeNumber = false;
                 } else if (i % j == 0) {
                     isPrimeNumber = false;
                     break;
                 }
             }
-
             if (isPrimeNumber == true) {
                 numOfPrimeNumber++;
             }
@@ -35,3 +36,4 @@ public class Main {
         return numOfPrimeNumber;
     }
 }
+
