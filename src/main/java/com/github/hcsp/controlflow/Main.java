@@ -20,11 +20,9 @@ public class Main {
         for (int i = 1; i < n; i++) {
             boolean isPrimeNumber = true;
             for (int j = 2; j <= Math.sqrt(n) + 1; j++) {
-                if (i == 2) {
-                    isPrimeNumber = true;
-                } else if (i == 1) {
+              if (i == 1) {
                     isPrimeNumber = false;
-                } else if (i % j == 0) {
+                } else if (i % j == 0 && i != j) {
                     isPrimeNumber = false;
                     break;
                 }
