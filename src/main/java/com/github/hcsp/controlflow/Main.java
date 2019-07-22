@@ -15,5 +15,23 @@ public class Main {
      * @param n 给定的数字
      * @return 1到n之间(不包括n)质数的个数
      */
-    public static int howManyPrimeNumbers(int n) {}
+    public static int howManyPrimeNumbers(int n) {
+        int num = 0;
+        for (int i = 2; i <= n; i++) {
+            if (qiuzhishu(i)) {
+                num++;
+            }
+        }
+        return num;
+    }
+
+    public static boolean qiuzhishu(int n1) {
+        for (int i = 2; i <= Math.sqrt(n1) + 1; i++) {
+            if (n1 % i == 0 && n1 !=i ) {
+                return false;
+            }
+
+        }
+        return true;
+    }
 }
