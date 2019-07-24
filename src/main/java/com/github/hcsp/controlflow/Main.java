@@ -20,7 +20,7 @@ public class Main {
         for (int i = 2; i < n; i++) {
             boolean flag = true;
             for (int j = 2; j <= Math.sqrt(n) + 1; j++) {
-                if(i % j == 0 && i!=j){
+                if (i % j == 0 && i != j) {
                     flag = false;
                     break;
                 }
