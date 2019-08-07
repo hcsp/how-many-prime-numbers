@@ -15,5 +15,16 @@ public class Main {
      * @param n 给定的数字
      * @return 1到n之间(不包括n)质数的个数
      */
-    public static int howManyPrimeNumbers(int n) {}
+    public static int howManyPrimeNumbers(int n) {
+        int count = 1;//设count计不为质数的个数，1默认为不是质数
+        for (int i = 2; i < n; i++) {//进行循环跑出给1-n的数
+            for (int j = 2; j <= Math.sqrt(i) + 1; j++) {
+                if (i % j == 0 && i != j) {//判断其不为质数，并计数
+                    count++;
+                    break;
+                }
+            }
+        }
+        return n - 1 - count;//因为i不包括n,所以是n-1 个数减count
+    }
 }
