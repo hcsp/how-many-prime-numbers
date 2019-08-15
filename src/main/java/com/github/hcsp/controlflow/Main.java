@@ -3,7 +3,7 @@ package com.github.hcsp.controlflow;
 public class Main {
     public static void main(String[] args) {
         System.out.println(howManyPrimeNumbers(100));
-        System.out.println(howManyPrimeNumbers(5));
+
     }
 
     /**
