@@ -2,7 +2,7 @@ package com.github.hcsp.controlflow;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(howManyPrimeNumbers(100));
+        System.out.println(howManyPrimeNumbers(7));
     }
 
     /**
@@ -15,5 +15,26 @@ public class Main {
      * @param n 给定的数字
      * @return 1到n之间(不包括n)质数的个数
      */
-    public static int howManyPrimeNumbers(int n) {}
+    public static int howManyPrimeNumbers(int n) {
+        if (n >= 0 && n <= 2) {
+            return 0;
+        }
+        int counter = 0;
+        for (int i = n-1; ; i--) {
+            if(i == 2){
+                counter ++;
+                break;
+            }
+            for (int j = 2; ; j++) {
+                if (i % j == 0) {
+                    break;
+                } else if (j == (int) Math.sqrt(i) + 1) {
+                    counter++;
+                    break;
+                }
+            }
+
+        }
+        return counter;
+    }
 }
