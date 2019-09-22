@@ -16,14 +16,8 @@ public class Main {
      * @return 1到n之间(不包括n)质数的个数
      */
     public static int howManyPrimeNumbers(int n) {
-        if (n <= 1) {
-            return 0;
-        }
-        int num = 1;
-        if (n == 2) {
-            return num;
-        }
-        for (int i = 3; i < n ; i++) {
+        int num = 0;
+        for (int i = 1; i < n ; i++) {
             boolean isPrimeNumber = true;
             for (int j = 2; j < Math.sqrt(i) + 1; j++) {
                 if (i % j == 0) {
