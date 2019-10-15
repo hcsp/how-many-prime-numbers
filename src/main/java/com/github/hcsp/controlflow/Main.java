@@ -17,7 +17,6 @@ public class Main {
      */
     public static int howManyPrimeNumbers(int n) {
         if (n<2){return 0;}
-
         int count = 0;
         for (int i=2; i<n; i++){
             if(isPrime(i)){count++;}
@@ -26,7 +25,7 @@ public class Main {
     }
     public static boolean isPrime(int num) {
         for (int i=2; i < Math.sqrt(num)+1 ; i++){
-            if (num%i==0){return false;}
+            if (num%i==0 && i!=num){return false;}
         }
         return true;
     }
