@@ -25,14 +25,14 @@ public class Main {
         return count;
     }
 
-    public static boolean isPrme(int num) {
-        if (num <= 1) {
+    public static boolean isPrme(int number) {
+        if (number <= 1) {
             return false;
-        } else if (num == 2) {
+        } else if (number == 2) {
             return true;
         }
-        for (int a = 2; a < Math.sqrt(num) + 1; a++) {
-            if (num % a == 0) {
+        for (int a = 2; a < Math.sqrt(number) + 1; a++) {
+            if (number % a == 0) {
                 return false;
             }
         }
