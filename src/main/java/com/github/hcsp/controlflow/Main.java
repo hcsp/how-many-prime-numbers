@@ -16,26 +16,15 @@ public class Main {
      * @return 1到n之间(不包括n)质数的个数
      */
     public static int howManyPrimeNumbers(int n) {
-//        int i = 2;
-//        int num = 0;
-//        while (i <= (Math.sqrt(n)+1)){
-//            if (n % i == 0){
-//                num++;
-//            }
-//            i++;
-//        }
-//        return num;
-
+        if(n<= 1) return 0;
         int num = 1;
         for (int j = 2;j < n;j++){
             boolean label = true;
-            int i = 2;
-            while (i <= Math.sqrt(j)+1){
+            for (int i = 2;i <= Math.sqrt(j)+1;i++){
                 if (j % i == 0){
                     label = false;
                     break;
                 }
-                i++;
             }
             if (label) num++;
         }
