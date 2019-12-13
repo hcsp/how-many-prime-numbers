@@ -16,12 +16,14 @@ public class Main {
      * @return 1到n之间(不包括n)质数的个数
      */
     public static int howManyPrimeNumbers(int n) {
-        int j=0;
-        for(int i=2;i<=Math.sqrt(n)+1;i++){
-            if(n%i==0){
+        int count = 0;
+        for (int i = 2; i < n ; i++) {
+            int j = 2;
+            while (i%j !=0 ) {
                 j++;
             }
+            if(i == j) count++;
         }
-        return j;
+        return count;
     }
 }
