@@ -17,14 +17,19 @@ public class Main {
      */
     public static int howManyPrimeNumbers(int n) {
         int num = 0;
-        for (int i = 2; i < n; i ++) {
-            for(int j = 2; j <Math.sqrt(i) + 1; j ++) {
-                if (i % j == 0) {
-                    num++;
-                    break;
-                }
+        for (int i = 2; i < n; i++) {
+            if(isPrim(i)) {
+                num++;
             }
         }
         return num;
+    }
+    public static boolean isPrim(int n) {
+        for(int i = 2; i < Math.sqrt(n); i++) {
+            if(n % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
