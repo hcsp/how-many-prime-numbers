@@ -25,7 +25,7 @@ public class Main {
         return num;
     }
     public static boolean isPrim(int n) {
-        for(int i = 2; i < Math.sqrt(n); i++) {
+        for(int i = 2; i < (int)Math.sqrt(n) + 1; i++) {
             if(n % i == 0) {
                 return false;
             }
