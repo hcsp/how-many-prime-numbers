@@ -2,7 +2,7 @@ package com.github.hcsp.controlflow;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(howManyPrimeNumbers(5));
+        System.out.println(howManyPrimeNumbers(10));
     }
 
     /**
@@ -17,8 +17,9 @@ public class Main {
      */
     public static int howManyPrimeNumbers(int n) {
         int count = 0;
-        for (int i = 1; i < n; i++) {
+        for (int i = 2; i < n; i++) {
             if (isPrime(i)) {
+                System.out.printf(i + " ");
                 count++;
             }
         }
@@ -26,9 +27,9 @@ public class Main {
     }
 
     public static boolean isPrime(int n) {
-        int max = (int)Math.sqrt(n) + 1;
+        int max = (int)Math.floor(Math.sqrt(n) + 1);
         for (int i = 2; i <= max; i++) {
-            if (n % 2 == 0) {
+            if (n % i == 0 && n != 2) {
                 return false;
             }
         }
