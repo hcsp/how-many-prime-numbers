@@ -1,5 +1,7 @@
 package com.github.hcsp.controlflow;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println(howManyPrimeNumbers(100));
@@ -15,5 +17,25 @@ public class Main {
      * @param n 给定的数字
      * @return 1到n之间(不包括n)质数的个数
      */
-    public static int howManyPrimeNumbers(int n) {}
+    public static int howManyPrimeNumbers(int n) {
+        int num = 0;
+        for (int i = 2; i <= n; i++) {
+            if (isPrime(i)) {
+                num++;
+            }
+        }
+        return num;
+    }
+
+    // 判断是否为素数
+    public static Boolean isPrime(int n) {
+        Boolean flag = true;
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
 }
