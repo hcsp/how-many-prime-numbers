@@ -18,10 +18,6 @@ public class Main {
     public static int howManyPrimeNumbers(int n) {
         int primeNumCount = 0;
 
-        if (n >= 2) {
-            primeNumCount++;
-        }
-
         for (int i = 3; i < n; i++) {
             if (isPrimeNum(i)) {
                 primeNumCount++;
@@ -31,6 +27,9 @@ public class Main {
     }
 
     private static boolean isPrimeNum(int num) {
+        if (num == 2) {
+            return true;
+        }
         for (int i = 2; i < Math.sqrt(num) + 1; i++) {
             if (num % i == 0) {
                 return false;
