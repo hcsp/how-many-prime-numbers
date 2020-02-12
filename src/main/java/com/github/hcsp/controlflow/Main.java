@@ -18,7 +18,7 @@ public class Main {
     public static int howManyPrimeNumbers(int n) {
         int primeNumCount = 0;
 
-        for (int i = 3; i < n; i++) {
+        for (int i = 2; i < n; i++) {
             if (isPrimeNum(i)) {
                 primeNumCount++;
             }
