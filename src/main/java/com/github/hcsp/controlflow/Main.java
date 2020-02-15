@@ -18,18 +18,19 @@ public class Main {
     public static int howManyPrimeNumbers(int n) {
         int count = 0;
         for (int i = 2; i < n; i++) {
-            boolean flag = true;
-            for (int j = 2; j < Math.sqrt(i) + 1 && i != 2; j++) {
-                if (i % j == 0) {
-                    flag = false;
-                    break;
-                }
-            }
-
-            if (flag) {
+            if (isPrimeNumber(i)) {
                 count++;
             }
         }
         return count;
+    }
+
+    public static boolean isPrimeNumber(int i) {
+        for (int j = 2; j < Math.sqrt(i) + 1 && i != 2; j++) {
+            if (i % j == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
