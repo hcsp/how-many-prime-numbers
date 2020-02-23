@@ -1,7 +1,5 @@
 package com.github.hcsp.controlflow;
 
-import java.util.TreeMap;
-
 public class Main {
     public static void main(String[] args) {
         System.out.println(howManyPrimeNumbers(100));
@@ -19,7 +17,8 @@ public class Main {
      */
     public static int howManyPrimeNumbers(int n) {
         int count = 0;
-        for (int i = 1; i <= n; i++) {
+        if (n < 2) return 1;
+        for (int i = 1; i < n; i++) {
             boolean flag = true;
             for (int j = 2; j < Math.sqrt(i) + 1; j++) {
                 if (i % j == 0) {
