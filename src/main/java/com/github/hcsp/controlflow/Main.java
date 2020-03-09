@@ -1,5 +1,7 @@
 package com.github.hcsp.controlflow;
 
+import java.util.stream.IntStream;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println(howManyPrimeNumbers(100));
@@ -15,5 +17,19 @@ public class Main {
      * @param n 给定的数字
      * @return 1到n之间(不包括n)质数的个数
      */
-    public static int howManyPrimeNumbers(int n) {}
+    public static int howManyPrimeNumbers(int n) {
+        return (int)IntStream.range(1, n)
+                .filter(Main::isPrime)
+                .count();
+    }
+
+    private static boolean isPrime(int n) {
+        long start = 2;
+        double until = Math.sqrt(n) + 1;
+        while (start <= until) {
+            if (n % start == 0) return false;
+            start += 1;
+        }
+        return true;
+    }
 }
