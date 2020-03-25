@@ -18,13 +18,13 @@ public class Main {
     public static int howManyPrimeNumbers(int n) {
         int count = 0;
         for (int i = 1; i < n; i++) {
-            boolean isTrue= true;
-            for (int j = 2; j < Math.sqrt(i) + 1 ; j++) {
-                if (i % j == 0 ) {
-                    isTrue = false ;
+            boolean isTrue = true;
+            for (int j = 2; j < Math.sqrt(i) + 1; j++) {
+                if (i % j == 0) {
+                    isTrue = false;
+                }
             }
-            }
-            if(isTrue == true){
+            if (isTrue == true) {
                 count += 1;
             }
         }
