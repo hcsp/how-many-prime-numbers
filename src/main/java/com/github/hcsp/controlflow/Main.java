@@ -17,29 +17,20 @@ public class Main {
      * @return 1到n之间(不包括n)质数的个数
      */
     public static int howManyPrimeNumbers(int n) {
-        boolean[] array = new boolean[n + 1];
-        for (int i = 2; i <= n; i++) {
-            array[i] = true;
+        if (n < 1) {
+            System.out.printf("请输入大于1的整数");
+            return -1;
         }
-
-        int count = 0;//素数个数
-        for (int i = 2; i * i <= n; i++) {
-            if (!array[i])//不是素数
-                continue;
-            //将当期素数的倍数置为false，为合数
-            int j = i * 2;
-            while (j <= n) {
-                if (array[j])
-                    array[j] = false;
-                j += i;
+        if (n == 1) return 1;
+        int count = 0;
+        int j;
+        for (int i = 1; i <n ; i++) {
+            for ( j = 2; i % j != 0; j++) {
+            }
+            if (j == i) {
+                count++;
             }
         }
-        //统计素数
-        for (boolean bool : array) {
-            if (bool)
-                count++;
-        }
-        return count - 1;
-
+        return count-1;
     }
 }
