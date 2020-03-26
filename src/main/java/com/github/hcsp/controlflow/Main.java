@@ -2,6 +2,7 @@ package com.github.hcsp.controlflow;
 
 public class Main {
     public static void main(String[] args) {
+
         System.out.println(howManyPrimeNumbers(100));
     }
 
@@ -15,5 +16,30 @@ public class Main {
      * @param n 给定的数字
      * @return 1到n之间(不包括n)质数的个数
      */
-    public static int howManyPrimeNumbers(int n) {}
+    public static int howManyPrimeNumbers(int n) {
+        boolean[] array = new boolean[n + 1];
+        for (int i = 2; i <= n; i++) {
+            array[i] = true;
+        }
+
+        int count = 0;//素数个数
+        for (int i = 2; i * i <= n; i++) {
+            if (!array[i])//不是素数
+                continue;
+            //将当期素数的倍数置为false，为合数
+            int j = i * 2;
+            while (j <= n) {
+                if (array[j])
+                    array[j] = false;
+                j += i;
+            }
+        }
+        //统计素数
+        for (boolean bool : array) {
+            if (bool)
+                count++;
+        }
+        return count - 1;
+
+    }
 }
