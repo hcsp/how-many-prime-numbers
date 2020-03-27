@@ -15,5 +15,22 @@ public class Main {
      * @param n 给定的数字
      * @return 1到n之间(不包括n)质数的个数
      */
-    public static int howManyPrimeNumbers(int n) {}
+    public static int howManyPrimeNumbers(int n) {
+        int sum = 0;
+        for (int i = 2; i < n; i++) {
+            boolean count = true;
+            for (int j = 2; j < Math.sqrt(i) + 1; j++) {
+                if (i % j == 0 && j != i) {
+                    count = false;
+                    break;
+                }
+            }
+            if (count) {
+                sum++;
+            }
+        }
+        return sum;
+    }
+
 }
+
