@@ -17,13 +17,13 @@ public class Main {
      * @return 1到n之间(不包括n)质数的个数
      */
     public static int howManyPrimeNumbers(int n) {
-        int count = 0;
+        int c = 0;
         for (int i = 2; i < n; i++) {
             if (isPrime(i)) {
-                count++;
+                c++;
             }
         }
-        return count;
+        return c;
     }
     public static boolean isPrime(int a) {
         for (int j = 2; j < Math.sqrt(a) + 1; j++) {
