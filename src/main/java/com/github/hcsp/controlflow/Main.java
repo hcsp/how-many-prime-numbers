@@ -15,5 +15,28 @@ public class Main {
      * @param n 给定的数字
      * @return 1到n之间(不包括n)质数的个数
      */
-    public static int howManyPrimeNumbers(int n) {}
+    public static int howManyPrimeNumbers(int n) {
+        if (n <= 1) {
+            return 0;
+        }
+        int result = 0;
+        for (int i = 2; i < n; i++) {
+            if(isPrimeNumber(i)) {
+                result++;
+            }
+        }
+        return result;
+    }
+
+    private static boolean isPrimeNumber(int n) {
+        if (n == 2) {
+            return true;
+        }
+        for (int i = 2; i < Math.sqrt(n) + 1; i++) {
+            if (n%i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
