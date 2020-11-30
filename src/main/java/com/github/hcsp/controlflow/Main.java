@@ -16,12 +16,13 @@ public class Main {
      * @return 1到n之间(不包括n)质数的个数
      */
     public static int howManyPrimeNumbers(int n) {
-        int i, j, count = 0;// 变量n为要判断的数字
+        int i, j, count = 0;  // 变量n为要判断的数字
         outToFristFor:
         for (i = 2; i <= n; i++) {
             for (j = 2; j <= i / 2; j++) {
-                if (i % j == 0)
+                if (i % j == 0) {
                     continue outToFristFor;
+                }
             }
             count++;
         }
