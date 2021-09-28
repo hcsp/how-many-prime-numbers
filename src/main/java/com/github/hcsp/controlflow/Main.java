@@ -2,7 +2,7 @@ package com.github.hcsp.controlflow;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(howManyPrimeNumbers(100));
+        System.out.println(howManyPrimeNumbers(2));
     }
 
     /**
@@ -15,5 +15,26 @@ public class Main {
      * @param n 给定的数字
      * @return 1到n之间(不包括n)质数的个数
      */
-    public static int howManyPrimeNumbers(int n) {}
+    public static int howManyPrimeNumbers(int n) {
+        if (n > 2) {
+            boolean zhishu = true;
+            int geshu = 1;
+            for (int x = 3; x < n; x++) {
+                for (int i = 2; i < Math.sqrt(x) + 1; i++) {
+                    if ((x % i) == 0) {   //3
+                        zhishu = false;
+                        break;//如果是合数 false
+                    } else {
+                        zhishu = true;// i ++
+                    }
+                }     //jieguo 要不就是false yaobu jiushi true
+                if (zhishu == true) {
+                    geshu++;
+                }
+            }
+            return geshu;
+        } else {
+            return 0;
+        }
+    }
 }
