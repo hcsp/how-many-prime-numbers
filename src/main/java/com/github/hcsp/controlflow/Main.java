@@ -17,7 +17,7 @@ public class Main {
      */
     public static int howManyPrimeNumbers(int n) {
         int count = 0;
-        for (int l = 2; l < n; l++) {
+        for (int l = 1; l < n; l++) {
             for (int m = 2; m <= (Math.sqrt(l) + 1); m++) {
                 if ((l % m) == 0) {
                     count--;
