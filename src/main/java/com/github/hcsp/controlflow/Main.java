@@ -1,7 +1,9 @@
 package com.github.hcsp.controlflow;
 
 public class Main {
-    public static void main(String[] args) { System.out.println(howManyPrimeNumbers(100)); }
+    public static void main(String[] args) {
+        System.out.println(howManyPrimeNumbers(100));
+    }
 
     /**
      * 给定一个数字n，返回1到n之间的质数（素数）个数，不包括n本身。
@@ -15,7 +17,7 @@ public class Main {
      */
     public static int howManyPrimeNumbers(int n) {
         int count = 0;
-        for (int i = 2; i <= n; i++) {
+        for (int i = 2; i < n; i++) {
             if (isPrime(i)) {
                 count++;
             }
