@@ -18,7 +18,7 @@ public class Main {
     public static int howManyPrimeNumbers(int n) {
         int flag = n==2?1:0;
         int value_flag = 0;
-        for (int i = 3; i < n; i++)
+        for (int i = 2; i < n; i++)
         {
             value_flag = 1;
             for (int j = 2; j <i ; j++)
