@@ -17,9 +17,11 @@ public class Main {
      */
     public static int howManyPrimeNumbers(int n) {
         int count = 0;
-        while (n > 1) {
+        n--;
+        while (n >= 1) {
             if (isPrime(n)) {
                 count++;
+                System.out.println("n = " + n);
             }
             n--;
         }
@@ -28,8 +30,9 @@ public class Main {
 
     private static boolean isPrime(int x) {
         boolean flag = true;
+        if (x == 1) return false;
         for (int i = 2; i < Math.sqrt(x) + 1; i++) {
-            if (x % i != 0) {
+            if (x != i && x % i == 0) {
                 flag = false;
                 break;
             }
